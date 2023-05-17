@@ -36,6 +36,23 @@ h2 {
   font-size: 60px;
   line-height: 2.5rem
 }
+.Content {
+    margin-top: 200px;
+  }
+input[type=text]  {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+.ButtonId {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background-color: #70e621;
+}
 
 body {
   justify-content: center;
@@ -149,6 +166,7 @@ img {
   .Content {
     margin-top: 50px;
   }
+  
   .Location-Data {
     flex-direction: column;
     margin-bottom: 50px;
