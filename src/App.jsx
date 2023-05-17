@@ -18,7 +18,6 @@ function App() {
         </a>
         <h2>Rick and Morty World Search</h2>
         </header>
-
         <div className='Content' >
           <Location/>
         </div>

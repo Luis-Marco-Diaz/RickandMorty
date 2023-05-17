@@ -1,40 +1,32 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
+const Location = () => {
 
-const Location = ({newId}) => {
-    
-        const [Id2, setId2, ] = useState("");
-            const onsubmit = (e) => {
-            e.preventDefault();
-            console.log({Id});
-            if(Id2 === "" || Id2.toString) return;
-            newId(Id2);
-            } 
-
-    
-    
-    const [ Id, setId ] = useState({});
-
-    useEffect(() => {
-        axios.get(`https://rickandmortyapi.com/api/location/${Id2}`)
+    const [ Id, setId ] = useState("")
+    const handleSubmit = e => { e.preventDefault() }
+    const searchById = () => {
+        axios.get(`https://rickandmortyapi.com/api/location/${Id}`)
              .then(res => setId(res.data))
-             .catch(error => console.error(error))
-             
-    }, [])
-
-
+             .catch(error => console.error(error))       
+        };
+    
     return (
-
         <div>
-            <div className="form" >
-            <form onSubmit={onsubmit}>
-                <div>
-                    <input type="text" placeholder="Type a location Id (1 to 101)" onChange={(e) =>setId2(e.target.value)}/>
-                    <button type="submit">Buscar por Id</button>
-                </div>
-             </form>
+            <div>
+              <div>
+                <form onSubmit={ e => handleSubmit(e) } >
+                <input 
+                type="text" 
+                placeholder="Type a location Id (1 to 126)" 
+                value={Id} 
+                onChange={(e) => setId(e.target.value)}
+                />
+                <button className="ButtonId" onClick={ searchById } >Buscar por Id</button>
+                </form>
+              </div>
             </div>
+            
             <div className='Location-Data'>
              <div>
                 <h3> Name: <br /> {Id.name} </h3>
@@ -49,9 +41,7 @@ const Location = ({newId}) => {
                 <h3> Population: <br /> {(Id.residents)?.length} </h3>
             </div>
              </div>
-            
         </div>
-
     );
 }
 
