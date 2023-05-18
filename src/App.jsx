@@ -21,7 +21,6 @@ function App() {
         <div className='Content' >
           <Location/>
         </div>
-
       </div>
   )
 }

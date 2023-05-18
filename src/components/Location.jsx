@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import ResidentInfo from './ResidentInfo'
 
 const Location = () => {
 
@@ -41,6 +42,12 @@ const Location = () => {
                 <h3> Population: <br /> {(Id.residents)?.length} </h3>
             </div>
              </div>
+             
+             <div className="ResidentsList" >
+               <ResidentInfo
+               residentslist = {Id} 
+               />
+              </div> 
         </div>
     );
 }
